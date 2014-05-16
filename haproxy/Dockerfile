@@ -1,3 +1,4 @@
+# run:  docker run -p 80:80 -p 443:443 -v /dev/log:/var/docker/log petee/haproxy
 FROM centos
 
 MAINTAINER Pete Erickson <pete.perickson@gmail.com>
@@ -14,6 +15,10 @@ ADD ssl/ /etc/haproxy/ssl
 
 # dummy config file
 ADD haproxy.cfg /etc/haproxy/haproxy.cfg
+
+RUN yum install -y MAKEDEV
+RUN mkdir -p /var/docker
+RUN /usr/sbin/mksock /var/docker/log
 
 # run script
 ADD run.sh /
