@@ -1,0 +1,4 @@
+elasticmq/boto-tests/bin
+elasticmq/boto-tests/lib
+elasticmq/boto-tests/include
+elasticmq/boto-tests/.Python
