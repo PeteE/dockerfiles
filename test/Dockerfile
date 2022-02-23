@@ -1,3 +1,3 @@
 FROM library/alpine:3
 RUN apk update
-RUN apk add tcpdump
+RUN apk add tcpdump net-tools
